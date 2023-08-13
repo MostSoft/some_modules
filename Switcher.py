@@ -33,8 +33,8 @@ class KeyboardSwitcherMod(loader.Module):
         "name": "KeyboardSwitcher"}
 
     async def switchcmd(self, message):
-    EnKeys = """`qwertyuiop[]asdfghjkl;'zxcvbnm,./~@#$%^&QWERTYUIOP{}ASDFGHJKL:"|ZXCVBNM<>?"""
-    UkKeys = """`йцукенгшщзхїфівапролджєячсмитьбю.ХЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮ,"""  # Українські букви
+        EnKeys = """`qwertyuiop[]asdfghjkl;'zxcvbnm,./~@#$%^&QWERTYUIOP{}ASDFGHJKL:"|ZXCVBNM<>?"""
+        UkKeys = """`йцукенгшщзхїфівапролджєячсмитьбю.ХЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮ,"""  # Українські букви
 
         if message.is_reply:
             reply = await message.get_reply_message()
