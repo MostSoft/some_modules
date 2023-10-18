@@ -161,7 +161,7 @@ class mQuotesMod(loader.Module):
 
         resp = await ftgUtils.run_sync(
             requests.post,
-            "https://quotes.mishase.dev/create",
+            "https://bot.lyo.su/quote/generate",
             data={
                 "data": json.dumps(
                     {
