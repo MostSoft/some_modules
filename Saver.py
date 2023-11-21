@@ -60,6 +60,5 @@ class SaverMod(loader.Module):
             await m.client.send_file(
                 "me",
                 new,
-                caption=f"<b>[Saver] Фото от</b> {f'@{m.sender.username}' if m.sender.username else m.sender.first_name} | <pre>{m.sender.id}</pre>\n"
-                f"Время жизни: <code>{m.media.}sec</code>",
+                caption=f"<b>[Saver] Фото от</b> {f'@{m.sender.username}' if m.sender.username else m.sender.first_name} | <pre>{m.sender.id}</pre>",
             )
