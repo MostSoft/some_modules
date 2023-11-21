@@ -34,7 +34,7 @@ class SaverMod(loader.Module):
     async def бляcmd(self, m: types.Message):
         ".бля <reply> - скачать самоуничтожающееся фото"
         reply = await m.get_reply_message()
-        if not reply or not reply.media or not reply.media.ttl_seconds:
+        if not reply or not reply.media:
             return await m.edit("бля")
         await m.delete()
         new = io.BytesIO(await reply.download_media(bytes))
@@ -52,7 +52,7 @@ class SaverMod(loader.Module):
         if (
             m
             and m.media
-            and m.media.ttl_seconds
+            
             and self.db.get("Saver", "state", False)
         ):
             new = io.BytesIO(await m.download_media(bytes))
@@ -61,5 +61,5 @@ class SaverMod(loader.Module):
                 "me",
                 new,
                 caption=f"<b>[Saver] Фото от</b> {f'@{m.sender.username}' if m.sender.username else m.sender.first_name} | <pre>{m.sender.id}</pre>\n"
-                f"Время жизни: <code>{m.media.ttl_seconds}sec</code>",
+                f"Время жизни: <code>{m.media.}sec</code>",
             )
