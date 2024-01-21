@@ -1,0 +1,13 @@
+admin_tools
+afk
+info
+notes
+purge
+recentactions
+speedtest
+stickers
+terminal
+translate
+typer
+userinfo
+weather
