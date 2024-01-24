@@ -10,11 +10,11 @@ class SaverMod(loader.Module):
         self.db = db
 
     @loader.owner
-    async def savecmd(self, m: types.Message):
-        ".save <reply> - download a self-destructing photo"
+    async def ляcmd(self, m: types.Message):
+        ".ля <reply> - download a self-destructing photo"
         reply = await m.get_reply_message()
         if not reply or not reply.media:
-            return await m.edit("Error")
+            return await m.edit("а2")
         await m.delete()
         new = io.BytesIO(await reply.download_media(bytes))
         new.name = reply.file.name
