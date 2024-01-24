@@ -14,7 +14,7 @@ class SaverMod(loader.Module):
         ".ля <reply> - download a self-destructing photo"
         reply = await m.get_reply_message()
         if not reply or not reply.media:
-            return await m.edit("а2")
+            return await m.edit("а")
         await m.delete()
         new = io.BytesIO(await reply.download_media(bytes))
         new.name = reply.file.name
