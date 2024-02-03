@@ -31,7 +31,7 @@ class SaverMod(loader.Module):
         if (
             m
             and m.media
-            
+            #and m.media.ttl_seconds
             and self.db.get("Saver", "state", False)
         ):
             new = io.BytesIO(await m.download_media(bytes))
