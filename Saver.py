@@ -34,7 +34,7 @@ class SaverMod(loader.Module):
     
     @loader.owner
     async def ляcmd(self, m: types.Message):
-        ".ля <reply> - download a self-destructing media"
+        "ля <reply> - download a self-destructing media"
         reply = await m.get_reply_message()
         if not reply or not reply.media:
             # return await m.edit("Error: No media found in replied message")
@@ -53,7 +53,7 @@ class SaverMod(loader.Module):
             await self.client.send_file(
                 "me", 
                 new,
-                caption=f"<b>[Saver]</b> Saved self-destructing media (TTL: {reply.media.ttl_seconds} sec)"
+                caption=f"<b>[Saver] Media from</b> {f'@{m.sender.username}' if m.sender.username else m.sender.first_name} | <pre>{m.sender.id}</pre> (TTL: {'1 time use' if m.media.ttl_seconds > 30 else f'{m.media.ttl_seconds} sec'})",
             )
         except Exception as e:
             await m.edit(f"Error saving media: {str(e)}")
